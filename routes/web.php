@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Front\FirstController;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 //use Mcamara\LaravelLocalization\LaravelLocalization;
@@ -32,7 +33,7 @@ Route::group(['prefix' =>LaravelLocalization::setLocale(),	'middleware' => [ 'lo
         Route::get('create','CrudController@create') ;
         Route::post('store','CrudController@store')->name('offers.store');
         
-        Route::get('edit/{offer_id}','CrudController@editOffer') ;
+        Route::get('edit/{offer_id}','CrudController@editOffer') ; 
         Route::post('update/{offer_id}','CrudController@updateOffer')->name('offers.update');
         Route::get('delete/{offer_id}','CrudController@delete')->name('offers.delete');
 
@@ -70,3 +71,6 @@ Route::get('admin', 'Auth\CustomeAuthController@admin')->middleware('auth:admin'
 
  Route::get('admin/login', 'Auth\CustomeAuthController@adminLogin')-> name('admin.login');
 Route::post('admin/login', 'Auth\CustomeAuthController@checkAdminLogin')-> name('save.admin.login');
+
+Route::get('has-one','Relation\RelationsController@hasOneRelation' );
+
