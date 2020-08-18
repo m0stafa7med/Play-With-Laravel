@@ -13,6 +13,9 @@ class RelationsController extends Controller
     {
        $q->select('code','number','user_id');
     }])->find(1);
+
    return response()->json($user);
+
+   
    }
 }
