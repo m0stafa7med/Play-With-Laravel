@@ -9,7 +9,10 @@ class RelationsController extends Controller
 {
    public function hasOneRelation()
    {
-    $user=\App\User::find(1);
-    return response()->json($user);
+    $user=\App\User::with(['phone'=>function($q)
+    {
+       $q->select('code','number','user_id');
+    }])->find(1);
+   return response()->json($user);
    }
 }

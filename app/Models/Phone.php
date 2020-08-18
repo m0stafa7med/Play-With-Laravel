@@ -8,6 +8,8 @@ class Phone extends Model
 {
     protected $table="phone";
     protected $fillable=['code','number','user_id'];
+    protected $hidden=['user_id'];
+
     public $timestamps=false;
 
 
