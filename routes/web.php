@@ -74,3 +74,7 @@ Route::post('admin/login', 'Auth\CustomeAuthController@checkAdminLogin')-> name(
 
 Route::get('has-one','Relation\RelationsController@hasOneRelation' );
 
+Route::get('has-one-reverse','Relation\RelationsController@hasOneRelationReverse' );
+
+Route::get('get-user-has-phone','Relation\RelationsController@getUserHasPhone');
+Route::get('get-user-not-has-phone','Relation\RelationsController@getUserNotHasPhone');
