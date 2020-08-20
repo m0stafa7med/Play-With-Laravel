@@ -78,3 +78,22 @@ Route::get('has-one-reverse','Relation\RelationsController@hasOneRelationReverse
 
 Route::get('get-user-has-phone','Relation\RelationsController@getUserHasPhone');
 Route::get('get-user-not-has-phone','Relation\RelationsController@getUserNotHasPhone');
+
+#####################################################
+Route::get('hospital-has-many','Relation\RelationsController@getHospitalDoctors');
+
+ Route::get('hospitals','Relation\RelationsController@hospitals') -> name('hospital.all');
+
+ Route::get('doctors/{hospital_id}','Relation\RelationsController@doctors')-> name('hospital.doctors');
+
+
+
+
+// Route::get('hospitals/{hospital_id}','Relation\RelationsController@deleteHospital') -> name('hospital.delete');
+
+ Route::get('hospitals_has_doctors','Relation\RelationsController@hospitalsHasDoctor');
+
+Route::get('hospitals_has_doctors_male','Relation\RelationsController@hospitalsHasOnlyMaleDoctors');
+
+Route::get('hospitals_not_has_doctors','Relation\RelationsController@hospitals_not_has_doctors');
+#####################################################
