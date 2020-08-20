@@ -12,6 +12,7 @@ class Service extends Model
 
     public function doctors(){
         return $this -> belongsToMany('App\Models\Doctor','doctor_service','service_id','doctor_id','id','id');
+        
     }
 
 }
