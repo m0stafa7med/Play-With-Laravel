@@ -53,8 +53,7 @@ Route::group(['prefix' => 'ajax-offers'], function () {
     Route::post('delete', 'OfferController@delete')->name('ajax.offers.delete');
     Route::get('edit/{offer_id}', 'OfferController@edit')->name('ajax.offers.edit');
     Route::post('update', 'OfferController@Update')->name('ajax.offers.update');
-});
-    
+}); 
 
 #################################################
 Route::group(['middleware' => 'CheckAge','namespace'=>'Auth'], function () {
@@ -89,9 +88,9 @@ Route::get('hospital-has-many','Relation\RelationsController@getHospitalDoctors'
 
 
 
-// Route::get('hospitals/{hospital_id}','Relation\RelationsController@deleteHospital') -> name('hospital.delete');
+Route::get('hospitals/{hospital_id}','Relation\RelationsController@deleteHospital') -> name('hospital.delete');
 
- Route::get('hospitals_has_doctors','Relation\RelationsController@hospitalsHasDoctor');
+Route::get('hospitals_has_doctors','Relation\RelationsController@hospitalsHasDoctor');
 
 Route::get('hospitals_has_doctors_male','Relation\RelationsController@hospitalsHasOnlyMaleDoctors');
 

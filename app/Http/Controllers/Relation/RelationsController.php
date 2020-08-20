@@ -102,17 +102,17 @@ class RelationsController extends Controller
         return Hospital::whereDoesntHave('doctors')->get();
     }
 
-   //  public function deleteHospital($hospital_id)
-   //  {
-   //      $hospital = Hospital::find($hospital_id);
-   //      if (!$hospital)
-   //          return abort('404');
-   //      //delete doctors in this hospital
-   //      $hospital->doctors()->delete();
-   //      $hospital->delete();
+    public function deleteHospital($hospital_id)
+    {
+        $hospital = Hospital::find($hospital_id);
+        if (!$hospital)
+            return abort('404');
+        //delete doctors in this hospital
+        $hospital->doctors()->delete();
+        $hospital->delete();
 
-   //      //return redirect() -> route('hospital.all');
-   //  }
+        return redirect() -> route('hospital.all');
+    }
 
    //  public function getDoctorServices()
    //  {
