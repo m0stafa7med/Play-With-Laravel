@@ -11,8 +11,7 @@ class Service extends Model
     protected $hidden=['created_at','updated_at'];
 
     public function doctors(){
-        return $this -> belongsToMany('App\Models\Doctor','doctor_service','service_id','doctor_id','id','id');
-        
+        return $this -> belongsToMany('App\Models\Doctor','doctor_service','service_id','doctor_id','id','id');   
     }
 
 }

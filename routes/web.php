@@ -96,3 +96,35 @@ Route::get('hospitals_has_doctors_male','Relation\RelationsController@hospitalsH
 
 Route::get('hospitals_not_has_doctors','Relation\RelationsController@hospitals_not_has_doctors');
 #####################################################
+
+
+################## Begin  Many To many Relationship #####################
+
+Route::get('doctors-services','Relation\RelationsController@getDoctorServices');
+
+Route::get('service-doctors','Relation\RelationsController@getServiceDoctors');
+
+
+Route::get('doctors/services/{doctor_id}','Relation\RelationsController@getDoctorServicesById')-> name('doctors.services');
+Route::post('saveServices-to-doctor','Relation\RelationsController@saveServicesToDoctors')-> name('save.doctors.services');
+
+
+################## End Many To many Relationship #####################
+
+
+######################### has one through ##########################
+
+
+Route::get('has-one-through','Relation\RelationsController@getPatientDoctor');
+
+Route::get('has-many-through','Relation\RelationsController@getCountryDoctor');
+
+
+################### End relations  routes ########################
+
+
+#######################  Begin accessors and mutators ###################
+
+Route::get('accessors','Relation\RelationsController@getDoctors'); //get data
+
+#######################  End accessors and mutators ###################
