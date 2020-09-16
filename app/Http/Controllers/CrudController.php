@@ -102,5 +102,22 @@ class CrudController extends Controller
         event(new VideoViewer($video));
         return view('video')->with('video',$video);
     }
+    
+    public function getAllInactiveOffers(){
+
+        // where  whereNull whereNotNull whereIn
+        //Offer::whereNotNull('details_ar') -> get();
+
+       //return  $inactiveOffers = Offer::inactive()->get();  //all inactive offers
+
+                                  // global scope
+       //return  $inactiveOffers = Offer::get();  //all inactive offers
+
+              // how to  remove global scope
+
+          return $offer  = Offer::withoutGlobalScope(OfferScope::class)->get();
+
+
+  }
 
 }
