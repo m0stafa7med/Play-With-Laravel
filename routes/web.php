@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 //use Mcamara\LaravelLocalization\LaravelLocalization;
 use  Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
+define('PAGINATION_COUNT',5);
 Route::get('login',function()
 {
     return view('login');

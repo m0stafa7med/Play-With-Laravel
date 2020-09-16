@@ -57,12 +57,14 @@ class CrudController extends Controller
     }
     public function getAllOffers()
     {
-        $offers= Offer::select('id','price','photo',
+        
+
+         $offers= Offer::select('id','price','photo',
         'name_'.LaravelLocalization::getcurrentLocale().' as name',
         'details_'.LaravelLocalization::getcurrentLocale().' as details'
         
-        )->get();
-        return view ('offers.all',compact('offers'));
+        )->paginate(PAGINATION_COUNT);
+        return view('offers.paginations',compact('offers'));
     }
     public function editOffer($offer_id)
     {

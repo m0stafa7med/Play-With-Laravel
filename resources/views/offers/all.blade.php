@@ -116,10 +116,10 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">{{__('messages.Offer name')}}</th>
-            <th scope="col">{{__('messages.Offer price')}}</th>
+            <th scope="col">{{__('messages.Offer Name')}}</th>
+            <th scope="col">{{__('messages.Offer Price')}}</th>
             <th scope="col">{{__('messages.Offer details')}}</th>
-            <th scope="col">{{__('messages.Offer photo')}}</th>
+            <th scope="col">{{__('messages.Offer Photo')}}</th>
             <th scope="col">{{__('messages.operation')}}</th>
 
           </tr>
