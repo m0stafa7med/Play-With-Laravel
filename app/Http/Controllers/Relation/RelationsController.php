@@ -174,17 +174,17 @@ class RelationsController extends Controller
         return 'success';
     }
 
-    // public function getPatientDoctor()
-    // {
-    //     $patient = Patient::find(2);
-    //     return $patient->doctor;
-    // }
+    public function getPatientDoctor()
+    {
+        $patient = Patient::find(2);
+        return $patient->doctor;
+    }
 
-    // public function getCountryDoctor()
-    // {
-    //     $country = Country::find(1);
-    //     return $country->doctors;
-    // }
+    public function getCountryDoctor()
+    {
+        $country = Country::find(1);
+        return $country->doctors;
+    }
 
 
     public function getDoctors()
