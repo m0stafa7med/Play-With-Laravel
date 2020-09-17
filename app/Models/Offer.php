@@ -15,8 +15,8 @@ class Offer extends Model
         parent::boot();
         static::addGlobalScope(new OfferScope);
     }
-    // public function setNameEnAttribute($value)
-    // {
-    //     $this->attributes['name_en'] = strtoupper($value);
-    // }
+    public function setNameEnAttribute($value)
+    {
+        $this->attributes['name_en'] = strtoupper($value);
+    }
 }
